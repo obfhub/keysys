@@ -479,3 +479,9 @@ UserInputService.InputChanged:Connect(function(input)
         update(input)
     end
 end)
+
+-- Wait for the user to successfully verify
+repeat task.wait() until success
+
+-- Return to let the loadstring know the key was accepted
+return success
