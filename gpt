@@ -324,7 +324,10 @@ local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "KeySystemUI"
 screenGui.ResetOnSpawn = false
-screenGui.Parent = PlayerGui
+screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling -- ensures proper layering
+screenGui.DisplayOrder = 999 -- high number = top-most
+screenGui.Parent = PlayerGui -- or CoreGui if your executor allows it
+
 
 -- Main Frame
 local mainFrame = Instance.new("Frame")
